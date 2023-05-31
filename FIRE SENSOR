@@ -1,0 +1,24 @@
+int led_pin=13; 
+int flame_sensor_pin=8; 
+int flame_pin=HIGH; 
+void setup(){ 
+ pinMode(led_pin, OUTPUT); 
+ pinMode(flame_sensor_pin, INPUT);  Serial.begin(9600); 
+} 
+void loop() 
+{ 
+ flame_pin=digitalRead(flame_sensor_pin);  if(flame_pin==HIGH) 
+ { 
+ Serial.println("FLAME,FLAME,FLAME");  digitalWrite(led_pin, HIGH); 
+ delay(1000); 
+ } 
+ else 
+ { 
+ Serial.println("No Flame"); 
+ digitalWrite(led_pin, LOW); 
+ } 
+ delay(1000); 
+} 
+Connections: D0-D3 
+Gnd-gnd 
+A0-A0
