@@ -1,0 +1,12 @@
+const int BUTTON_PIN = 7;  
+void setup() { 
+ Serial.begin(9600); 
+ pinMode(BUTTON_PIN, INPUT_PULLUP); 
+} 
+void loop() { 
+ int buttonState = digitalRead(BUTTON_PIN); 
+ // print out the button's state  
+ Serial.println(buttonState); 
+} 
+Connections:gnd-gnd 
+otherPin-D7
